@@ -10,10 +10,10 @@ import staticRoute  from "./routes/staticRouter.js"
 import userRoute from "./routes/userRoutes.js"
 
 const app = express();
-const PORT = process.env.PORT ;
+const PORT = process.env.PORT || 8000 ;
 
 //connection to MongoDB Database
-connectMongoDb(process.env.MONGO_URL )
+connectMongoDb(process.env.MONGO_URL || "mongodb://localhost:27017/shortUrl" )
 
 //middleware
 configureMiddleware(app);
